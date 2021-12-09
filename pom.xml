@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.turbo.cloud</groupId>
+		<artifactId>turbo-cloud-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>./turbo-cloud-parent</relativePath>
+	</parent>
+	<groupId>com.turbo.cloud</groupId>
+	<artifactId>turbo-cloud-platform</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>turbo-cloud-platform</name>
+	<packaging>pom</packaging>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+		<turbo-cloud.version>0.0.1-SNAPSHOT</turbo-cloud.version>
+	</properties>
+
+	<modules>
+		<!--turbo-cloud 基础中心模块-->
+		<module>turbo-cloud-admin</module>
+		<!--turbo-cloud 业务中心模块-->
+		<module>turbo-cloud-business</module>
+		<!--turbo-cloud 后端服务模块-->
+		<module>turbo-cloud-console</module>
+		<!--turbo-cloud 外部依赖-->
+		<module>turbo-cloud-dependencies</module>
+		<!--turbo-cloud 框架整合-->
+		<module>turbo-cloud-framework</module>
+		<!--turbo-cloud 内部依赖管理-->
+		<module>turbo-cloud-parent</module>
+		<!--turbo-cloud 统一登录管理-->
+		<module>turbo-cloud-passport</module>
+		<!--turbo-cloud 小程序管理-->
+		<module>turbo-cloud-program</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<!-- develop 环境 -->
+			<id>develop</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<profile.active>develop</profile.active>
+				<logback.dir>./app/logs</logback.dir>
+			</properties>
+		</profile>
+		<profile>
+			<!-- preview环境 -->
+			<id>test</id>
+			<properties>
+				<profile.active>test</profile.active>
+				<logback.dir>./app/logs</logback.dir>
+			</properties>
+		</profile>
+		<profile>
+			<!-- preview环境 -->
+			<id>preview</id>
+			<properties>
+				<profile.active>preview</profile.active>
+				<logback.dir>./app/logs</logback.dir>
+			</properties>
+		</profile>
+		<profile>
+			<!-- product 环境 -->
+			<id>product</id>
+			<properties>
+				<profile.active>product</profile.active>
+				<logback.dir>./app/logs</logback.dir>
+			</properties>
+		</profile>
+	</profiles>
+</project>
