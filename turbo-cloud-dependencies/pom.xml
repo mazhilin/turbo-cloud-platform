@@ -1,20 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.turbo.cloud</groupId>
     <artifactId>turbo-cloud-dependencies</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>turbo-cloud-dependencies</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <main.basedir>${basedir}/../..</main.basedir>
+        <resource.delimiter>@</resource.delimiter>
+        <start-class>org.rainbow.spring.boot.Application</start-class>
+        <turbo-cloud.version>0.0.1-SNAPSHOT</turbo-cloud.version>
+        <spring-boot.version>2.6.1</spring-boot.version>
+        <spring-framework.version>5.3.13</spring-framework.version>
+        <commons-io.version>2.11.0</commons-io.version>
+        <commons-fileupload.version>1.4</commons-fileupload.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-codec.version>1.15</commons-codec.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <commons-pool.version>1.6</commons-pool.version>
+        <commons-pool2.version>2.9.0</commons-pool2.version>
+        <lombok.version>1.18.20</lombok.version>
+        <fastjosn.version>1.2.78</fastjosn.version>
+        <hutool.version>5.7.15</hutool.version>
+        <mysql.version>8.0.27</mysql.version>
+        <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
+        <disruptor.version>3.4.4</disruptor.version>
+        <!-- Web 相关 -->
+        <knife4j.version>3.0.2</knife4j.version>
+        <swagger-annotations.version>1.5.22</swagger-annotations.version>
+        <swagger-fox.version>3.0.0</swagger-fox.version>
+        <knife4j-.version>2.0.9</knife4j-.version>
+        <!--Dubbo 相关-->
+        <dubbo.version>2.7.14</dubbo.version>
+        <dubbo-api.version>2.7.8.3</dubbo-api.version>
+        <zookeeper.version>3.7.0</zookeeper.version>
+        <curator.version>5.2.0</curator.version>
+        <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
+        <druid.version>1.2.8</druid.version>
+        <dynamic-datasource.version>3.4.1</dynamic-datasource.version>
+        <sureness.version>1.0.5</sureness.version>
+        <spring-boot-sureness.version>1.0.0-beta.2</spring-boot-sureness.version>
+        <shiro.version>1.8.0</shiro.version>
+        <java-jwt.version>3.18.2</java-jwt.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <cglib.version>3.3.0</cglib.version>
+
+        <pagehelper.version>5.3.0</pagehelper.version>
+        <spring-boot-pagehelper.version>1.4.1</spring-boot-pagehelper.version>
+
+        <guice.version>5.0.1</guice.version>
+        <guava.version>31.0.1-jre</guava.version>
+        <mybatis-mate.version>1.0.18</mybatis-mate.version>
+        <netty.version>4.1.58.Final</netty.version>
+        <redisson.version>3.16.4</redisson.version>
+
+        <protobuf-java.version>3.19.1</protobuf-java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -40,21 +94,75 @@
         </dependency>
     </dependencies>
 
+
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/application*.yml</include>
+                    <include>**/application*.yaml</include>
+                    <include>**/application*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/application*.yml</exclude>
+                    <exclude>**/application*.yaml</exclude>
+                    <exclude>**/application*.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <!-- JUnit 配置 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <!--忽略测试启动类 -->
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <fork>true</fork>
+                        <mainClass>${start-class}</mainClass>
+                        <layout>ZIP</layout>
+                        <classifier>${project.version}</classifier>
+                        <executable>false</executable>
+                        <excludeDevtools>false</excludeDevtools>
+                        <excludes>
+                            <exclude>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>

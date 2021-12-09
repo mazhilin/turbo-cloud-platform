@@ -4,16 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.turbo.cloud</groupId>
-        <artifactId>turbo-cloud-dependencies</artifactId>
+        <artifactId>turbo-cloud-framework</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../turbo-cloud-dependencies</relativePath>
     </parent>
     <groupId>com.turbo.cloud</groupId>
-    <artifactId>turbo-cloud-parent</artifactId>
+    <artifactId>turbo-cloud-authority</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>turbo-cloud-parent</name>
+    <name>turbo-cloud-authority</name>
     <description>Demo project for Spring Boot</description>
-    <packaging>pom</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -31,19 +29,10 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <fork>true</fork>
-                    <mainClass>${start-class}</mainClass>
-                    <layout>ZIP</layout>
-                    <classifier>${project.version}</classifier>
-                    <executable>false</executable>
-                    <excludeDevtools>false</excludeDevtools>
-                </configuration>
             </plugin>
         </plugins>
     </build>
