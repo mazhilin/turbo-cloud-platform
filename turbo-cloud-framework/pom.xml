@@ -40,7 +40,7 @@
     </build>
 
     <modules>
-        <module>turbo-cloud-authority</module>
+        <module>turbo-cloud-sso</module>
         <module>turbo-cloud-boot</module>
         <module>turbo-cloud-extension</module>
         <module>turbo-cloud-common</module>
