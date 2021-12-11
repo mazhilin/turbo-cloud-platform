@@ -105,6 +105,20 @@
                 <scope>import</scope>
             </dependency>
 
+            <!--dubbo-api setting begin-->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-api-docs-annotations</artifactId>
+                <version>${dubbo-api.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-api-docs-core</artifactId>
+                <version>${dubbo-api.version}</version>
+            </dependency>
+            <!--dubbo-api setting end-->
 
             <dependency>
                 <groupId>org.mapstruct</groupId>
