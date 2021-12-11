@@ -6,7 +6,7 @@
         <groupId>com.turbo.cloud</groupId>
         <artifactId>turbo-cloud-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../turbo-cloud-parent</relativePath>
+        <relativePath>../turbo-cloud-framework/turbo-cloud-parent</relativePath>
     </parent>
     <groupId>com.turbo.cloud</groupId>
     <artifactId>turbo-cloud-console</artifactId>

@@ -11,7 +11,8 @@
     <artifactId>turbo-cloud-admin-domain</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>turbo-cloud-admin-domain</name>
-    <description>Demo project for Spring Boot</description>
+    <description>TurboCloud云服务基础中心模块领域模型</description>
+    <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>

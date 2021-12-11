@@ -8,7 +8,7 @@
 		<groupId>com.turbo.cloud</groupId>
 		<artifactId>turbo-cloud-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>./turbo-cloud-parent</relativePath>
+		<relativePath>../turbo-cloud-platform/turbo-cloud-framework/turbo-cloud-parent</relativePath>
 	</parent>
 	<groupId>com.turbo.cloud</groupId>
 	<artifactId>turbo-cloud-platform</artifactId>
@@ -27,12 +27,8 @@
 		<module>turbo-cloud-admin</module>
 		<!--turbo-cloud 后端服务模块-->
 		<module>turbo-cloud-console</module>
-		<!--turbo-cloud 外部依赖-->
-		<module>turbo-cloud-dependencies</module>
 		<!--turbo-cloud 框架整合-->
 		<module>turbo-cloud-framework</module>
-		<!--turbo-cloud 内部依赖管理-->
-		<module>turbo-cloud-parent</module>
 		<!--turbo-cloud 统一登录管理-->
 		<module>turbo-cloud-passport</module>
 		<!--turbo-cloud 小程序管理-->

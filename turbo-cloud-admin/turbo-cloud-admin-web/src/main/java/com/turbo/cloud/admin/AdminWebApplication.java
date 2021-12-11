@@ -1,8 +1,7 @@
 package com.turbo.cloud.admin;
 
+import com.turbo.cloud.framework.core.annotation.SpringBootWebApplication;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
@@ -13,10 +12,10 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @version 1.0.0
  * <p>Copyright © 2018-2021 Pivotal Cloud Technology Systems Incorporated. All rights reserved.<br></p>
  */
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class TurboCloudAdminWebApplication {
+@SpringBootWebApplication
+public class AdminWebApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(TurboCloudAdminWebApplication.class, args);
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(AdminWebApplication.class, args);
         applicationContext.registerShutdownHook();
         applicationContext.start();
     }

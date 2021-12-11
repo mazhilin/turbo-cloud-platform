@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.turbo.cloud</groupId>
+        <artifactId>turbo-cloud-dependencies</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../turbo-cloud-dependencies</relativePath>
+    </parent>
+    <groupId>com.turbo.cloud</groupId>
+    <artifactId>turbo-cloud-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>turbo-cloud-parent</name>
+    <description>TurboCloud云服务内部依赖管理</description>
+    <packaging>pom</packaging>
+    <properties>
+        <java.version>1.8</java.version>
+        <turbo-cloud.version>0.0.1-SNAPSHOT</turbo-cloud.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--TurboCloud依赖配置-->
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-dependencies</artifactId>
+                <version>${turbo-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--turbo-cloud-framework依赖配置-->
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-boot</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+
+            <!--turbo-cloud-common依赖配置-->
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-common-api</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-common-base</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-common-center</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-common-web</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+            <!--turbo-cloud-dubbo依赖配置-->
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-dubbo-common</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-dubbo-provider</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-dubbo-consumer</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-extension</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-integration</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-job</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-logger</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-mysql</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-mybatis</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-payment</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-redis</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-security</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <!--turbo-cloud-sso依赖配置-->
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-sso-common</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-sso-server</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.turbo.cloud</groupId>
+                <artifactId>turbo-cloud-sso-client</artifactId>
+                <version>${turbo-cloud.version}</version>
+            </dependency>
+
+            <!--turbo-cloud-framework依赖配置-->
+        </dependencies>
+    </dependencyManagement>
+
+
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>${start-class}</mainClass>
+                    <layout>ZIP</layout>
+                    <classifier>${project.version}</classifier>
+                    <executable>false</executable>
+                    <excludeDevtools>false</excludeDevtools>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
